@@ -15,17 +15,17 @@ script:
 
 # no need to specify dockerfile because Dockerfile is the default.
 after_success:
-  - docker build -t react-client ./client
-  - docker build -t react-nginx ./nginx
-  - docker build -t react-server ./server
-  - docker build -t react-worker ./worker
+  - docker build -t shaun210/react-client ./client
+  - docker build -t shaun210/react-nginx ./nginx
+  - docker build -t shaun210/react-server ./server
+  - docker build -t shaun210/react-worker ./worker
 
   # login to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # push the images to docker hub
-  - docker push react-client
-  - docker push react-nginx
-  - docker push react-server
-  - docker push react-worker
+  - docker push shaun210/react-client
+  - docker push shaun210/react-nginx
+  - docker push shaun210/react-server
+  - docker push shaun210/react-worker
 
 # incredible
