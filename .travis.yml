@@ -20,7 +20,7 @@ after_success:
   - docker build -t shaun210/react-server ./server
   - docker build -t shaun210/react-worker ./worker
 
-  # login to docker CLI
+  # login to docker CLIv
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # push the images to docker hub
   - docker push shaun210/react-client
